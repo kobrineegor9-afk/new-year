@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>форма поиска</title>
+</head>
+<body>
+<form action="/result_find/">
+    <select name = 'type_find'>
+        <option value = 'name'>по имени   </option>
+        <option value = 'age'> по возрасту   </option>
+        <option value = 'gender'> по гендеру  </option>
+    </select>
+    <input type = 'text' name ='text' placeholder=" введите значение">
+    <input type="submit" value = "найти"  >
+</form>
+<h2>форма для заполнения</h2>
+<form action = '/result_find/'>
+    <p>
+        <label>имя пользователя</label>
+        <input type="text" name ='name' required autocomplete="off">
+    </p>
+    <p>
+        <label>E-mail</label>
+        <input type="email" name = 'email' required>
+    </p>
+    <fieldset>
+        <legend>выберите ваши интересы</legend>
+        <input type = 'checkbox'id = 'int1'name = 'int1' value = 'спорт '>
+        <label for = 'int1'>спорт</label>
+        <input type = 'checkbox'id = 'int2'name = 'int2' value = 'музыка '>
+        <label for = 'int2'>спорт</label>
+        <input type = 'checkbox'id = 'int3'name = 'int3' value = 'чтение'>
+        <label for = 'int3'>спорт</label>
+    </fieldset>
+
+
+</form>
+</body>
+</html>
