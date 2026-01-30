@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>таблица :{{table_name}}</h3>
+<table border ='1'>
+    <tr>
+        {%for column in columns%}
+        <th> {{column}}</th>
+        {%endfor%}
+    </tr>
+    {%for row in rows%}
+    <tr>
+        {%for cell in row%}
+        <td>
+            {{cell}}
+        </td>
+        {%endfor%}
+    </tr>
+    {%endfor%}
+</table>
+</body>
+</html>
