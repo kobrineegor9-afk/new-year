@@ -6,6 +6,11 @@ app = Flask(__name__)
 def get_db():
     con = sqlite3.connect('data.db')
     cursor = con.cursor()
+    # cursor.execute('''CREATE TABLE name_table'
+    #                (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    #                name TEXT,
+    #                age INTEGER DEFAULT 0
+    #                ''')
 
 
     return cursor
@@ -60,6 +65,39 @@ def search():
                            first = first,
                            second = second,
                            q=q)
+
+@app.route('/add/')
+def add():
+    conn = sqlite3.connect('data.db')
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS medicines
+                (
+                    name TEXT,
+                    manufacturer TEXT,
+                    form TEXT,
+                    price REAL,
+                    id INTEGER PRIMARY KEY AUTOINCREMENT
+               )''')
+    cursor.execute('select * from medicines')
+    p = cursor.fetchall()
+    print(p)
+    p1 = request.args.get('p1')
+    p2 = request.args.get('p2')
+    p3 = request.args.get('p3')
+    p4 = request.args.get('p4')
+    n_p = (p1,p2,p3,p4)
+    r = '''insert into medicines(name,manufacturer,form,price) values(?,?,?,?);'''
+    cursor.execute(r,n_p)
+    conn.commit()
+    cursor.execute('select*from medicines')
+    q = cursor.fetchall()
+    print(q)
+    conn.close()
+    return render_template('add.html',
+
+                            q=q)
+
+
 
 
 

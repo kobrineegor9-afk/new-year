@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>введите информацию о препарате</h3>
+<form action = '/add/'>
+      <p>
+          <label for = 'p1'>название препарата</label>
+          <input type ='text' name="p1" id ='p1'>
+      </p>
+    <p>
+        <label for = 'p2'>производитель препарата:</label>
+        <input type ='text' name = 'p2' id = 'p2'>
+    </p>
+    <p>
+        <label for = 'p3'>форма препарата:</label>
+        <input type ='text' name = 'p3' id = 'p3'>
+    </p>
+    <p>
+        <label for = 'p4'>стоимость препарата:</label>
+        <input type ='text' name = 'p4' id = 'p4'>
+    </p>
+    <input type = 'submit' value = 'отправить'>
+</form>
+
+<p> такой бд была:</p>
+<br>
+<table border = '1'>
+    {%for row in q if row and row[0] is not none%}
+        <tr>
+            {%for cell in row%}
+            <td>
+                {{cell}}
+            </td>
+            {%endfor%}
+        </tr>
+    {%endfor%}
+</table>
+
+
+</body>
+</html>
