@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel ='stylesheet' href = '/styles_register.css/'>
 </head>
 <body>
 <h2>регистрация</h2>
@@ -17,7 +18,24 @@
     </p>
     <p>
         <label for = 'patronymic'>очество:</label>
-        <input type ='text' name ='name' id ='name'>
+        <input type ='text' name ='patronymic' id ='patronymic'>
+    </p>
+    <p>
+        <label for = 'gen'>пол:</label><br>
+        <input type ='radio' name ='gen' id="gen" >мужской
+        <input type ='radio' name ='gen' >женский
+    </p>
+    <p>
+        <label for = 'email'>E-mail:</label>
+        <input type ='email' name ='email' id ='email'>
+    </p>
+    <p>
+        <label for = 'username'>логин:</label>
+        <input type ='text' name ='username' id ='username'>
+    </p>
+    <p>
+        <label for = 'password'>пароль:</label>
+        <input type ='password' name ='password' id ='password'>
     </p>
     <input type = 'submit' value = 'отправить'>
 </form>
