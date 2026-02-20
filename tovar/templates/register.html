@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel ='stylesheet' href = '/styles_register.css/'>
+</head>
+<body>
+<h2>регистрация</h2>
+<form action ='/register/' method = 'POST'>
+    <p>
+        <label for = 'name'>название товара:</label>
+        <input type  = 'text' name = 'name' id = name>
+    </p>
+    <p>
+        <label for = 'price'>стоимость  проката:</label>
+        <input type ='number' name ='price' id ='price'>
+    </p>
+    <p>
+        <label for = 'col'>количество экземпляров :</label>
+        <input type ='number' name ='col' id ='col'>
+    </p>
+    <p>
+        <label for = 'nal'>наличие :</label><br>
+        <input type ='radio' name ='nal' id ='nal'>Есть<br>
+        <input type = 'radio' name = 'nal' >отсутсвует
+    </p>
+    <p>
+        <label for = 'tel'>телефон:</label>
+        <input type ='text' name ='tel' id ='tel'>
+    </p>
+    <input type = 'submit' value = 'отправить'>
+</form>
+
+
+</body>
+</html>

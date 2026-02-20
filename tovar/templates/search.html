@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/search/">
+    <p>
+        <label for ='select'>выберите критерий поиска</label><br>
+        <select name ='select' id = 'select'>
+            <option name = 'name'>по названию</option>
+            <option name ='man'>по количеству</option>
+            <option name = 'form'>по цене</option>
+        </select>
+    </p>
+
+    <p>
+        <label for = 'text'>введите параметр поиска</label><br>
+        <input type ='text' name = 'text' id = 'text'>
+    </p>
+        <input type ='submit' value="Поиск">
+</form>
+<br>
+<table border = '1'>
+    {%for row in q%}
+        <tr>
+            {%for cell in row%}
+            <td>
+                {{cell}}
+            </td>
+            {%endfor%}
+        </tr>
+    {%endfor%}
+</table>
+</body>
+</html>
