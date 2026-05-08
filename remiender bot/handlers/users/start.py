@@ -2,7 +2,7 @@ from aiogram.filters import Command
 from aiogram.types import Message
 from loader import router
 from database import register_user
-from keyboards.reply import get_main_keyboard
+from handlers.keyboards.reply import get_main_keyboard
 
 
 @router.message(Command('start'))

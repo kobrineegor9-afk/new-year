@@ -7,7 +7,7 @@ from database import (
     add_reminder, get_user_reminders, delete_reminder,
     delete_all_reminders, get_reminder_by_id
 )
-from keyboards.reply import get_main_keyboard, get_reminder_actions_keyboard
+from handlers.keyboards.reply import get_main_keyboard, get_reminder_actions_keyboard
 
 
 # Состояния для FSM
