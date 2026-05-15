@@ -57,8 +57,8 @@ def update_wish(user_id: int,room_id:int , wish:str):
 
 def get_partipicants(room_id:int) -> List[Dict[str, Any]]:
     conn = get_connection()
-    participants = conn.execute(
-        'SELECT * FROM participants WHERE room_id =?',
+    partipicants = conn.execute(
+        'SELECT * FROM partipicants WHERE room_id =?',
         (room_id,)
     )
     conn.commit()

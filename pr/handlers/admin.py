@@ -5,7 +5,7 @@ from database.crude import create_room, get_room, get_partipicants, finish_room
 from utils.game import start_game
 
 router = Router()
-@router.message(Command('new game'))
+@router.message(Command('new_game'))
 async def new_game(message:Message):
     '''Создать новую игру /new_game Навзвание'''
     args = message.text.split(maxsplit = 1)
@@ -17,7 +17,7 @@ async def new_game(message:Message):
     room_id = create_room(message.chat.id, name)
     await message.answer(
         f'✔ игра "{name}" создана! '
-        f'ID игры: <code>{room_id}</code>'
+        f'ID игры: "{room_id}"'
         f' скажите участникам ввести: /join {room_id}'
     )
 
@@ -26,7 +26,7 @@ async def draw_command(message: Message):
     '''провести жеребьевку: /start ID_игры'''
     args = message.text.split()
     if len(args)<2 :
-        await message.answer('❌укажите ID игры : /start_game "1" ')
+        await message.answer('❌укажите ID игры : /draw 1 ')
         return
 
     try:
@@ -42,7 +42,7 @@ async def draw_command(message: Message):
         await message.answer('❌игра уже завершена')
         return
     partipicants = get_partipicants(room_id)
-    if len(partipicants) <3:
+    if len(partipicants) < 3:
         await message.answer('❌нужно минимум 3 участника ')
         return
     start_game(partipicants)
