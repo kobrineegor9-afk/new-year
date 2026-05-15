@@ -24,7 +24,7 @@ def init_db():
     """)
 
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS participants (
+        CREATE TABLE IF NOT EXISTS partipicants (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             room_id INTEGER NOT NULL,
             user_id INTEGER NOT NULL,
@@ -33,7 +33,7 @@ def init_db():
             wish TEXT,
             target_id INTEGER,
             FOREIGN KEY (room_id) REFERENCES rooms (id),
-            FOREIGN KEY (target_id) REFERENCES participants (id),
+            FOREIGN KEY (target_id) REFERENCES partipicants (id),
             UNIQUE(room_id, user_id)
         )
     """)

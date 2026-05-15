@@ -31,11 +31,11 @@ def finish_room(room_id: int):
     conn.commit()
     conn.close()
 
-def add_participant(room_id: int, user_id: int, username:Optional[str],first_name: str) -> bool:
+def add_partipicant(room_id: int, user_id: int, username:Optional[str],first_name: str) -> bool:
     conn = get_connection()
     try:
         conn.execute(
-            'INSERT INTO particpants (room_id , user_id, username,first_name)VALUES (?,?,?,?)',
+            'INSERT INTO partipicants (room_id , user_id, username,first_name)VALUES (?,?,?,?)',
             (room_id, user_id,username, first_name)
         )
         conn.commit()
