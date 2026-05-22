@@ -55,14 +55,15 @@ def update_wish(user_id: int,room_id:int , wish:str):
     conn.commit()
     conn.close()
 
-def get_partipicants(room_id:int) -> List[Dict[str, Any]]:
+def get_partipicants(room_id: int) -> List[Dict[str, Any]]:
     conn = get_connection()
-    partipicants = conn.execute(
-        'SELECT * FROM partipicants WHERE room_id =?',
+    result = conn.execute(
+        'SELECT * FROM partipicants WHERE room_id = ?',
         (room_id,)
-    )
-    conn.commit()
+    ).fetchall()
     conn.close()
+    return [dict(p) for p in result]
+
 
 def set_target(partipicant_id:int, target_id:int):
     conn = get_connection()
